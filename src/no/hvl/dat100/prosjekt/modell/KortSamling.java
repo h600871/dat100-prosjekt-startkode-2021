@@ -96,8 +96,10 @@ public class KortSamling {
 	 *         null.
 	 */
 	public Kort seSiste() {
-		return samling[antall - 1];
-		
+		if(antall > 0)
+			return samling[antall - 1];
+		else
+			return null;
 	}
 
 	/**
@@ -107,10 +109,15 @@ public class KortSamling {
 	 *         null.
 	 */
 	public Kort taSiste() {
-		antall--;
-		Kort siste = samling[antall];
-		samling[antall] = null;
-		return siste;
+		if (antall > 0){
+			antall--;
+			Kort siste = samling[antall];
+			samling[antall] = null;
+			return siste;
+		}
+		else{
+			return null;
+		}
 	}
 	
 	/**
@@ -159,7 +166,11 @@ public class KortSamling {
 	 *         som i kortsamlinga.
 	 */
 	public Kort[] getAllekort() {
-		return samling;	
+		Kort[] alleKort = new Kort[antall];
+		for (int i = 0; i < antall; i++){
+			alleKort[i] = samling[i];
+		}
+		return alleKort;	
 	}
 	
 }
