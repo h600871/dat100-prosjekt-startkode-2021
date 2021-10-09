@@ -2,6 +2,7 @@ package no.hvl.dat100.prosjekt.modell;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class KortUtils {
 
@@ -28,7 +29,11 @@ public class KortUtils {
 	 * @param samling samling av kort som skal stokkes.
 	 */
 	public static void stokk(KortSamling samling) {
-		Collections.shuffle(Arrays.asList(samling.getAllekort()));
+		List<Kort> liste = Arrays.asList(samling.getAllekort());
+		Collections.shuffle(liste);
+		samling.fjernAlle();
+		for (Kort kort : liste)
+			samling.leggTil(kort);
 	}
 
 }
