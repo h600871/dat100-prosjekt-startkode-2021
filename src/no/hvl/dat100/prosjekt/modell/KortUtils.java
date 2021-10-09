@@ -1,8 +1,7 @@
 package no.hvl.dat100.prosjekt.modell;
 
-import java.util.Random;
-
-import no.hvl.dat100.prosjekt.TODO;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class KortUtils {
 
@@ -11,30 +10,25 @@ public class KortUtils {
 	 * 
 	 * @see Kort
 	 * 
-	 * @param samling
-	 * 			samling av kort som skal sorteres. 
+	 * @param samling samling av kort som skal sorteres.
 	 */
-	
+
 	public static void sorter(KortSamling samling) {
-		
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-		// TODO - END
+		Kort[] kort = samling.getAllekort();
+		Arrays.sort(kort);
+
+		samling.fjernAlle();
+		for (Kort k : kort)
+			samling.leggTil(k);
 	}
-	
+
 	/**
-	 * Stokkar en kortsamling. 
+	 * Stokkar en kortsamling.
 	 * 
-	 * @param samling
-	 * 			samling av kort som skal stokkes. 
+	 * @param samling samling av kort som skal stokkes.
 	 */
 	public static void stokk(KortSamling samling) {
-		
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-		// TODO - END
+		Collections.shuffle(Arrays.asList(samling.getAllekort()));
 	}
-	
+
 }
