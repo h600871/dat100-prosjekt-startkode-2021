@@ -1,6 +1,5 @@
 package no.hvl.dat100.prosjekt.kontroll;
 
-import no.hvl.dat100.prosjekt.TODO;
 import no.hvl.dat100.prosjekt.modell.Kort;
 import no.hvl.dat100.prosjekt.modell.KortSamling;
 import no.hvl.dat100.prosjekt.modell.KortUtils;
@@ -23,11 +22,11 @@ public class Bord {
 	public Bord() {
 		bunkeFra = new KortSamling();
 		bunkeTil = new KortSamling();
-		
+
 		reset();
 	}
 
-	public void reset(){
+	public void reset() {
 		bunkeTil.fjernAlle();
 		bunkeFra.leggTilAlle();
 		KortUtils.stokk(bunkeFra);
@@ -128,7 +127,7 @@ public class Bord {
 			bunkeFra.leggTil(bunkeTil.taSiste());
 
 		bunkeTil.leggTil(siste);
-		
+
 		KortUtils.stokk(bunkeFra);
 	}
 

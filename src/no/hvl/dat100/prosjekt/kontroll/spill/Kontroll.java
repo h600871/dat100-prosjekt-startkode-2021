@@ -1,7 +1,5 @@
 package no.hvl.dat100.prosjekt.kontroll.spill;
 
-import java.util.ArrayList;
-
 import no.hvl.dat100.prosjekt.kontroll.ISpiller;
 import no.hvl.dat100.prosjekt.kontroll.Spill;
 import no.hvl.dat100.prosjekt.kontroll.dommer.Dommer;
@@ -22,7 +20,7 @@ public class Kontroll {
 
 		spill = new Spill();
 		dommer = new Dommer(spill);
-		
+
 		spill.start();
 
 		dommer.sjekkStart();
@@ -153,7 +151,7 @@ public class Kontroll {
 	 * 
 	 * @return syds hand som en ArrayList av Kort.
 	 */
-	
+
 	// kaldes ved klikk på tur ikon når syd sin tur
 	public boolean sydForbi() {
 
@@ -184,49 +182,48 @@ public class Kontroll {
 	 * @return kort som blir foreslått.
 	 */
 	private Kort foreslaaKortSyd() {
-		
+
 		// TODO - START
 		// Hint: bruk nesteHandling metoden for en spiller
-		
+
 		Kort kort = null;
 		Handling handling = spill.getSyd().nesteHandling(spill.getBord().seOversteBunkeTil());
 
 		switch (handling.getType()) {
-		
-		case LEGGNED:
-			kort = handling.getKort();
-			break;
-		default:
-			break;
-			
+
+			case LEGGNED:
+				kort = handling.getKort();
+				break;
+			default:
+				break;
+
 		}
 
 		return kort;
-		
+
 		// throw new UnsupportedOperationException(TODO.method());
 		// return null;
 		// TODO - END
-		
+
 	}
-	
+
 	/**
 	 * Spiller et kort fra syd.
 	 * 
-	 * @param kort
-	 *            kort som spilles.
+	 * @param kort kort som spilles.
 	 * 
 	 * @return true dersom kortet er lovlig å spille, false ellers.
 	 */
 	private boolean spillkortSyd(Kort kort) {
-		
+
 		// TODO - START
 		return spill.leggnedKort(spill.getSyd(), kort);
-		
+
 		// throw new UnsupportedOperationException(TODO.method());
 		// return null;
 		// TODO - END
 	}
-	
+
 	// kaldes ved klikk på et kort hos syd.
 	public boolean leggnedKortSyd(Kort kort) {
 

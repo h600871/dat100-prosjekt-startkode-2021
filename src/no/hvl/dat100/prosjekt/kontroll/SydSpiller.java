@@ -34,6 +34,7 @@ public class SydSpiller extends Spiller {
 	 * @param topp kort som ligg øverst på til-bunken.
 	 */
 	@Override
+		//#TODO: Imlementer egen AI
 	public Handling nesteHandling(Kort topp) {
 		// ArrayLister for de kort vi har og kan spille
 		Kort[] hand = getHand().getAllekort();

@@ -1,17 +1,14 @@
 package no.hvl.dat100.prosjekt.kontroll;
 
-import no.hvl.dat100.prosjekt.modell.KortSamling;
-import no.hvl.dat100.prosjekt.modell.KortUtils;
-import no.hvl.dat100.prosjekt.TODO;
-import no.hvl.dat100.prosjekt.kontroll.dommer.Regler;
 import no.hvl.dat100.prosjekt.kontroll.spill.Spillere;
 import no.hvl.dat100.prosjekt.modell.Kort;
+import no.hvl.dat100.prosjekt.modell.KortSamling;
 
 /**
- * Abstrakt klasse som implementerer alle metodene i kontrakten (interfacet) ISpiller,
- * bortsett fra nesteHandling(). Dette er grunnen til at klassen er abstrakt.
- * For å lage "virkelige" spillere, må vi arve fra denne klassen og implementere
- * nesteHandling (fra ISpiller).
+ * Abstrakt klasse som implementerer alle metodene i kontrakten (interfacet)
+ * ISpiller, bortsett fra nesteHandling(). Dette er grunnen til at klassen er
+ * abstrakt. For å lage "virkelige" spillere, må vi arve fra denne klassen og
+ * implementere nesteHandling (fra ISpiller).
  * 
  * Klassen har objektvariablene hand (Hand), antalltrekk (heltall) og spiller
  * (Spillere). Den har to konstruktører. Se beskrivelse av disse.
@@ -20,11 +17,11 @@ import no.hvl.dat100.prosjekt.modell.Kort;
 public abstract class Spiller implements ISpiller {
 
 	// hand for spilleren (samling)
-	private KortSamling hand; 
-	
+	private KortSamling hand;
+
 	// antall trekk spilleren har gjort fra fra-bunken
-	private int antalltrekk; 
-	
+	private int antalltrekk;
+
 	// hvem spilleren er (Nord,Syd,Ingen) - se oppramsklassen Spillere
 	private Spillere spiller;
 
@@ -39,11 +36,9 @@ public abstract class Spiller implements ISpiller {
 	}
 
 	/**
-	 * Konstruktør der vi kan sette hvilken spiller det er (NORD, SYD eller
-	 * INGEN).
+	 * Konstruktør der vi kan sette hvilken spiller det er (NORD, SYD eller INGEN).
 	 * 
-	 * @param spiller
-	 *            hvilken spiller det er.
+	 * @param spiller hvilken spiller det er.
 	 */
 	public Spiller(Spillere spiller) {
 		hand = new KortSamling();

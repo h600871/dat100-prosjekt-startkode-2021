@@ -9,7 +9,6 @@ import no.hvl.dat100.prosjekt.kontroll.spill.Handling;
 import no.hvl.dat100.prosjekt.kontroll.spill.Spillere;
 import no.hvl.dat100.prosjekt.modell.Kort;
 import no.hvl.dat100.prosjekt.modell.KortSamling;
-import no.hvl.dat100.prosjekt.modell.KortUtils;
 
 public class Dommer {
 
@@ -42,12 +41,12 @@ public class Dommer {
 	/**
 	 * Gir kortene som en ArrayList.
 	 * 
-	 * @return samlinga av kort som en ArrayList. Korta skal ha samme rekkefølge
-	 *         som i kortsamlinga.
+	 * @return samlinga av kort som en ArrayList. Korta skal ha samme rekkefølge som
+	 *         i kortsamlinga.
 	 */
-	
+
 	private static ArrayList<Kort> toArrayList(KortSamling samling) {
-		
+
 		int antallKort = samling.getAntalKort();
 		Kort[] kortTab = samling.getSamling();
 
@@ -57,9 +56,9 @@ public class Dommer {
 		}
 
 		return list;
-		
+
 	}
-	
+
 	private boolean sjekkUtdeling() {
 		boolean korrekt = false;
 
@@ -147,15 +146,15 @@ public class Dommer {
 		LOGGER.info("Sjekker " + handlingstr);
 
 		switch (handling.getType()) {
-		case TREKK:
-			ok = antalltrekk < Regler.maksTrekk();
-			break;
-		case FORBI:
-			ok = antalltrekk > 0;
-			break;
-		case LEGGNED:
-			Kort kort = handling.getKort();
-			ok = harKort(spiller, kort) && Regler.kanLeggeNed(kort, spill.getBord().seOversteBunkeTil());
+			case TREKK:
+				ok = antalltrekk < Regler.maksTrekk();
+				break;
+			case FORBI:
+				ok = antalltrekk > 0;
+				break;
+			case LEGGNED:
+				Kort kort = handling.getKort();
+				ok = harKort(spiller, kort) && Regler.kanLeggeNed(kort, spill.getBord().seOversteBunkeTil());
 		}
 
 		if (!ok) {
@@ -170,27 +169,27 @@ public class Dommer {
 		String handlingstr = "[ " + spiller.hvem() + " " + handling + " med " + antalltrekk + " trekk ] ";
 
 		switch (handling.getType()) {
-		case TREKK:
-			if (kort != null) {
-				trekkFraBunke(spiller.hvem(), kort);
-				LOGGER.info("Utfører " + "[ " + spiller.hvem() + " " + handling + " " + kort + " med " + antalltrekk
-						+ " trekk ] ");
-			} else {
-				LOGGER.severe("Utfører " + "[ " + spiller.hvem() + " " + handling + " (null) med " + antalltrekk
-						+ " trekk ] ");
-			}
-			break;
-		case FORBI:
-			LOGGER.info("Utfører " + handlingstr);
-			antalltrekk = 0;
-			break;
-		case LEGGNED:
-			LOGGER.info("Utfører " + handlingstr);
-			Kort kortned = handling.getKort();
-			overste = kortned;
-			antalltrekk = 0;
-			fjernKort(spiller, kortned);
-			break;
+			case TREKK:
+				if (kort != null) {
+					trekkFraBunke(spiller.hvem(), kort);
+					LOGGER.info("Utfører " + "[ " + spiller.hvem() + " " + handling + " " + kort + " med " + antalltrekk
+							+ " trekk ] ");
+				} else {
+					LOGGER.severe("Utfører " + "[ " + spiller.hvem() + " " + handling + " (null) med " + antalltrekk
+							+ " trekk ] ");
+				}
+				break;
+			case FORBI:
+				LOGGER.info("Utfører " + handlingstr);
+				antalltrekk = 0;
+				break;
+			case LEGGNED:
+				LOGGER.info("Utfører " + handlingstr);
+				Kort kortned = handling.getKort();
+				overste = kortned;
+				antalltrekk = 0;
+				fjernKort(spiller, kortned);
+				break;
 		}
 
 		LOGGER.info("Nord har " + nordHand.toString());
