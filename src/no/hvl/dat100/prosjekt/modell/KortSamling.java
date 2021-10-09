@@ -61,7 +61,8 @@ public class KortSamling {
 	 * @param kort er kortet som skal leggast til.
 	 */
 	public void leggTil(Kort kort) {
-		samling[antall++] = kort;
+		if (kort != null)
+			samling[antall++] = kort;
 	}
 
 	/**
