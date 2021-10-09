@@ -100,8 +100,6 @@ class TestBord {
 
 		Bord bord = new Bord();
 
-		KortSamling bunkefra = bord.getBunkeFra();
-
 		int antallbunke = bord.antallBunkeFra();
 
 		Kort k1 = bord.getBunkeFra().seSiste();
