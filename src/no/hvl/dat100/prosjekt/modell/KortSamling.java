@@ -70,6 +70,7 @@ public class KortSamling {
 	 * slik at de normalt må stokkes før bruk.
 	 */
 	public void leggTilAlle() {
+		antall = 0;
 		for (Kortfarge farge : Kortfarge.values()) {
 			for (int i = 1; i <= Regler.MAKS_KORT_FARGE; i++) {
 				samling[antall++] = new Kort(farge, i);

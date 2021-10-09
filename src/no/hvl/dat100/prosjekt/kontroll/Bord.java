@@ -22,9 +22,15 @@ public class Bord {
 	 */
 	public Bord() {
 		bunkeFra = new KortSamling();
-		bunkeFra.leggTilAlle();
-
 		bunkeTil = new KortSamling();
+		
+		reset();
+	}
+
+	public void reset(){
+		bunkeTil.fjernAlle();
+		bunkeFra.leggTilAlle();
+		KortUtils.stokk(bunkeFra);
 	}
 
 	/**
