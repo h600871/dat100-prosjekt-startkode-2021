@@ -106,9 +106,10 @@ public class Spill {
 	/**
 	 * Gir neste handling for en spiller (spilt et kort, trekker et kort, forbi)
 	 * 
-	 * @param spiller spiller som handle.
+	 * @param spiller
+	 *            spiller som skal handle.
 	 * 
-	 * @return handlingen som blir utført.
+	 * @return handlingen som skal utføres av kontroll delen.
 	 */
 	public Handling nesteHandling(ISpiller spiller) {
 		return spiller.nesteHandling(bord.seOversteBunkeTil());
