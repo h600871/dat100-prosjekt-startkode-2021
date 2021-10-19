@@ -1,10 +1,14 @@
 package no.hvl.dat100.prosjekt.main;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.swing.SwingUtilities;
 
+import jdk.internal.net.http.common.Log;
 import no.hvl.dat100.prosjekt.kontroll.spill.Kontroll;
 
-public class PlayManyGames {
+public class BesteAvNSpill {
 
     public static void main(String[] args) {
 
@@ -18,6 +22,8 @@ public class PlayManyGames {
                 int nordSpillerVunnet = 0;
                 int sydSpillerVunnet = 0;
                 int antallSpill = 1000;
+                
+                Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).setLevel(Level.OFF);
 
                 for (int i = 0; i < antallSpill; i++) {
 
