@@ -3,7 +3,6 @@ package no.hvl.dat100.prosjekt.main;
 import javax.swing.SwingUtilities;
 
 import no.hvl.dat100.prosjekt.kontroll.spill.Kontroll;
-import no.hvl.dat100.prosjekt.utsyn.*;
 
 public class PlayManyGames {
 
